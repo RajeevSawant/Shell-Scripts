@@ -1,0 +1,65 @@
+#! /bin/bash
+
+# Variable names can start with Letters or underscore, and can have numbers anywhere else
+# Whenever u declare variables u cannot have whitespace in the either side of equal sign
+
+myName="Rajeev"    
+
+echo $myName
+
+
+
+# Declaring Constants
+
+declare -r NUM1=2
+
+num2=3
+
+num3=$((NUM1+num2))
+num4=$((NUM1*num2))
+num5=$((NUM1-num2))
+
+echo "$NUM1 + $num2 = $num3"
+echo "$NUM1 * $num2 = $num4"
+echo "$NUM1 - $num2 = $num5"
+echo "$NUM1 - $num2 = $num5"
+echo "$NUM1**$num2  = $((NUM1**num2))"
+echo "$NUM1 % $num2 = $((NUM1%num2))"
+
+
+rand=6
+let rand+=4
+
+echo $rand
+
+echo "rand++ = $(( rand++ ))"
+echo "++rand = $(( ++rand ))"
+echo "rand-- = $(( rand-- ))"
+echo "--rand = $(( --rand ))"
+
+# Floating point numbers
+
+num1=1.4
+num2=1.2
+num3=$(python -c "print $num1+$num2")
+echo $num3
+
+
+#I=0
+#grep -i "NUM1"||I=$((I + 1));
+#echo $I
+
+
+cat << END
+This Text 
+prints on 
+Many Lines
+END
+
+
+
+
+
+
+
+
