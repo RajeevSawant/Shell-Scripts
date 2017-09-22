@@ -1,0 +1,96 @@
+#!/bin/bash
+
+#Define a function
+
+
+myName="Rajeev"
+
+echo $myName
+
+# Declare Constants
+
+declare -r NUM1=2
+num2=3
+
+num3=$((NUM1 + num2))
+num4=$((NUM1 * num2))
+num5=$((NUM1 / num2))
+
+echo "$NUM1 + $num2 = $num3"
+echo "$NUM1 * $num2 = $num4"
+echo "$NUM1 / $num2 = $num5"
+
+
+rand=6
+let rand+=6
+
+echo $rand
+
+echo " rand++ = $(( rand++ ))"
+echo " ++rand = $(( ++rand ))"
+echo " rand-- = $(( rand-- ))"
+echo " --rand = $(( --rand ))"
+
+#Flaoting point numbers
+
+
+num1=1.4
+num2=1.2
+num3=$(python -c "print $num1+$num2")
+echo $num3
+
+
+
+getDate(){
+  date
+
+return 
+}
+
+getDate
+
+#Local and Global variable 
+
+name="Rajeev"
+
+demLocal(){
+local name="Sawant"
+echo "The Local variable name has the value $name"
+return
+}
+
+demLocal
+echo $name
+
+
+
+# Create a function that accepts the argument and performs operations
+
+
+getSum(){
+  local num3=$1
+	local num4=$2
+
+	local sum=$((num3 + num4))
+  
+	# This is to pass back the value to whoever calls our function. 
+	echo $sum 
+}
+
+num1=30
+num2=60
+
+echo "The sum of the above 2 numbers is $(getSum num1 num2)"
+
+
+# Read input form the user
+
+
+read -p "What is ur name ? " name
+echo "Hello $name"
+
+
+
+
+
+
