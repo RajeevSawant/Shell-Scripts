@@ -1,0 +1,116 @@
+#!/bin/bash
+
+
+# Recap
+
+name="Rajeev"
+echo $name
+
+# Declare Constant
+
+declare -r NUM1=3
+num2=7
+
+echo "The Addition of $NUM1 and $num2 is $((NUM1 + num2))" 
+echo "The Substraction of $NUM1 and $num2 is $((NUM1 - num2))" 
+echo "The Multiplication of $NUM1 and $num2 is $((NUM1 * num2))" 
+echo "The Division of $NUM1 and $num2 is $((NUM1 / num2))" 
+
+
+# Pre Increment and Post Increment
+
+rand=5
+let rand+=7
+
+echo "The value of rand++ is $((rand++))"
+echo "The value of ++rand is $((++rand))"
+echo "The value of rand-- is $((rand--))"
+echo "The value of --rand is $((--rand))"
+
+
+#Floating point number value
+
+num1=3.5
+num2=4.5
+
+echo "The value of the floating point addition is $(python -c "print $num1+$num2")"
+
+
+# Function defination
+
+getDate(){
+  date
+	return
+}
+
+getDate
+
+# Local and Global Variable 
+
+name="Rajeev"
+getName(){
+  local name="Sawant"
+	echo $name
+	return
+}
+echo $name 
+getName
+
+
+# Fucntions that accepts the argument
+
+getSum(){
+
+ local num3=$1
+ local num4=$2
+
+ local sum=$((num3 + num4))
+
+ echo $sum 
+}
+num1=30
+num5=60
+
+echo "The sum of $num1 and $num5 is $(getSum num1 num5)"
+
+# Read the input values
+
+read -p "What is your name? " name
+echo "Hello $name"
+
+read -p "What is Your age? " age
+
+if ((age > 16)); then
+  echo "You can Drive"
+elif ((age == 15)); then
+  echo "You can Drive Next"
+else
+  echo "You can't Drive"
+fi
+
+
+read -p "What is number you wanna check? " number
+if ((number%2 == 0)); then
+  echo "The Number is Even"
+else
+  echo "The Number is Odd"
+fi
+
+read -p "Enter the number u wanna check? " value 
+
+if (( ((value > 0)) && ((value < 10)) )); then
+  echo "The value is between 0 and 10"
+elif ((value > 10)); then
+  echo "The value is greater than 10"
+else
+  echo "The value is less than 10"
+fi
+
+
+
+
+
+
+
+
+
